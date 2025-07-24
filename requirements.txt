@@ -1,0 +1,7 @@
+lppls
+yfinance
+cloudinary
+matplotlib
+numpy
+pandas
+python-dotenv 
