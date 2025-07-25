@@ -4,14 +4,38 @@
 실행환경은 깃허브 액션으로 설정.
 ![LPPLS Confidnce Indicator of TESLA](https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png)
 
+## Update Status
+깃허브 액션 오전 9시 업데이트 기능 테스트중
+
+테스트 완료 후
+ - public_id
+```bash
+        upload_result = cloudinary.uploader.upload(
+            f"{ticker['name']}.png",
+            public_id = f"lppl/{ticker['name']}",
+            overwrite=True,
+            invalidate=True,
+            resource_type="image"
+        )
+```
+ - fitting window size
+```bash
+        workers=8,
+        window_size=120,
+        smallest_window_size=40,
+        outer_increment=20,
+        inner_increment=20,
+        max_searches=25,
+```
+
 ## 업로드 링크
-매주 월요일 9시 업로드
+매주 월요일 오전 9시 업로드
     
-    -KOSPI: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/KOSPI.png
+     -KOSPI: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/KOSPI.png
     
-    -S&P500: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/SNP500.png
+     -S&P500: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/SNP500.png
     
-    -TESLA: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png
+     -TESLA: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png
 
 ## 사용 방법
 .env 파일 생성, cloudinary 설정 입력
@@ -49,5 +73,5 @@ pip install -r requirements.txt
 python test_lpplci.py
 ```
 
-##Important link
--lppls module source: https://github.com/Boulder-Investment-Technologies/lppls
+## Important link
+ -lppls module source: https://github.com/Boulder-Investment-Technologies/lppls
