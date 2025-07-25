@@ -30,9 +30,9 @@
 
 ## 업로드 링크
 매주 월요일 오전 9시 업로드
- -KOSPI: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/KOSPI.png
- -S&P500: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/SNP500.png
- -TESLA: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png
+ - KOSPI: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/KOSPI.png
+ - S&P500: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/SNP500.png
+ - TESLA: https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png
 
 ## 사용 방법
 .env 파일 생성, cloudinary 설정 입력
@@ -71,4 +71,4 @@ python test_lpplci.py
 ```
 
 ## Important link
- -lppls module source: https://github.com/Boulder-Investment-Technologies/lppls
+ - lppls module source: https://github.com/Boulder-Investment-Technologies/lppls
