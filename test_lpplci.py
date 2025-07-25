@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     uploaded_urls = []
 
-    for ticker in [ {'symbol': 'TSLA', 'name': 'TESLA'}]:
+    for ticker in tickers:
         # 데이터 로드
         observations = load_data(ticker['symbol'])
 
