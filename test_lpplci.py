@@ -35,7 +35,7 @@ from engine.ComputeLPPLCI import compute_lpplci
 from engine.plot_confidence_indicators import plot_confidence_indicators
 
 if __name__ == "__main__":
-    load_dotenv()
+    """load_dotenv()""" #현지에서 실행시 실행행
 
     ticker_symbol = '^KS11'  # 필요시 변경
     tickers = [
@@ -65,13 +65,21 @@ if __name__ == "__main__":
         plt.suptitle(ticker['name'], fontsize=40, fontweight='bold')
         plt.savefig(f"{ticker['name']}.png", bbox_inches='tight')
         #plt.show()
-
-        # Cloudinary 업로드
+        
+        """ # Cloudinary 업로드 현지 실행행
         cloudinary.config(
             cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
             api_key = os.environ.get("CLOUDINARY_API_KEY"),
             api_secret = os.environ.get("CLOUDINARY_API_SECRET")
+        ) """
+
+        # Cloudinary 업로드 깃허브 액션 실행행
+        cloudinary.config(
+            cloud_name = os.environ["CLOUDINARY_CLOUD_NAME"],
+            api_key = os.environ["CLOUDINARY_API_KEY"],
+            api_secret = os.environ["CLOUDINARY_API_SECRET"]
         )
+
         upload_result = cloudinary.uploader.upload(
             f"{ticker['name']}.png",
             public_id = f"lppls/{ticker['name']}",

@@ -61,3 +61,6 @@ coverage.xml
 
 #git push
 git_push.bat
+
+#Cloudinary API
+.env
