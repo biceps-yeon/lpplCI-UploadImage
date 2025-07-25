@@ -6,9 +6,9 @@ def compute_lpplci(observations, lppls):
     res = lppls_model.mp_compute_nested_fits(
         workers=8,
         window_size=120,
-        smallest_window_size=30,
-        outer_increment=2,
-        inner_increment=2,
+        smallest_window_size=40,
+        outer_increment=20,
+        inner_increment=20,
         max_searches=25,
     )
     return lppls_model, res 
