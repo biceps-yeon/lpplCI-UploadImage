@@ -1,13 +1,13 @@
 # 위젯용 LPPL CI 이미지 생성
 
-이것 lppls 모듈을 사용하여 휴대폰 위젯용 KOSPI, S&P500, TESLA의 LPPL CI 이미지를 생성, cloudinary에 고정 URL로 업로드하는 프로젝트입니다.
+이것은 lppls 모듈을 사용하여 휴대폰 위젯용 KOSPI, S&P500, TESLA의 LPPL CI 이미지를 생성, cloudinary에 고정 URL로 업로드하는 프로젝트입니다.
 실행환경은 깃허브 액션으로 설정.
 ![LPPLS Confidnce Indicator of TESLA](https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png)
 
 ## Update Status
 깃허브 액션 오전 9시 업데이트 기능 테스트중
 
-테스트 완료 후
+테스트 완료 후 다음 변경
  - public_id
 ```bash
         upload_result = cloudinary.uploader.upload(
