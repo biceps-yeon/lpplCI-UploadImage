@@ -7,8 +7,8 @@ def compute_lpplci(observations, lppls):
         workers=8,
         window_size=120,
         smallest_window_size=30,
-        outer_increment=1,
-        inner_increment=1,
+        outer_increment=5,
+        inner_increment=2,
         max_searches=25,
     )
     return lppls_model, res 
