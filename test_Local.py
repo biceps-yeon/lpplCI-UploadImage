@@ -36,7 +36,7 @@ from engine.plot_confidence_indicators import plot_confidence_indicators
 
 if __name__ == "__main__":
     load_dotenv()
-    
+
     # Cloudinary 업로드 현지 실행용
     cloudinary.config(
         cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         
         upload_result = cloudinary.uploader.upload(
             f"{ticker['name']}.png",
-            public_id = f"lppl/{ticker['name']}",
+            public_id = f"lppls{ticker['name']}",
             overwrite=True,
             invalidate=True,
             resource_type="image"
