@@ -43,32 +43,7 @@ CLOUDINARY_API_KEY= your cloudinary api key #e.g. CLOUDINARY_API_KEY= 1111111
 CLOUDINARY_API_SECRET= your cloudinary api secret #e.g. CLOUDINARY_API_SECRET= BBBBBBB
 ```
 
-다음의 문장을 변경 (docstring 해제, cloudinary 깃허브 실행용 삭제)
-```bash
-    """load_dotenv()""" #현지에서 실행시 실행
-
-....
-
-        """ # Cloudinary 업로드 현지 실행용
-        cloudinary.config(
-            cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
-            api_key = os.environ.get("CLOUDINARY_API_KEY"),
-            api_secret = os.environ.get("CLOUDINARY_API_SECRET")
-        ) """
-
-        # Cloudinary 업로드 깃허브 액션 실행용
-        cloudinary.config(
-            cloud_name = os.environ["CLOUDINARY_CLOUD_NAME"],
-            api_key = os.environ["CLOUDINARY_API_KEY"],
-            api_secret = os.environ["CLOUDINARY_API_SECRET"]
-        )
-```
-
-terminal에 다음을 입력
-```bash
-pip install -r requirements.txt
-python test_lpplci.py
-```
+requirements.txt 설치 후 test_Local.py 실행
 
 ## Important link
  - lppls module source: https://github.com/Boulder-Investment-Technologies/lppls
