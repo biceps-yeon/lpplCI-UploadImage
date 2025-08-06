@@ -37,16 +37,16 @@ from engine.plot_confidence_indicators import plot_confidence_indicators
 if __name__ == "__main__":
     """load_dotenv()""" #현지에서 실행시 실행
 
-    ticker_symbol = '^KS11'  # 필요시 변경
+    ticker_symbol = '^KS11'
+    ticker = {
+        'symbol': '^KS11',
+        'name': 'KOSPI'
+    }
     tickers = [
         {'symbol': '^KS11', 'name': 'KOSPI'},
         {'symbol': '^GSPC', 'name': 'SNP500'},
         {'symbol': 'TSLA', 'name': 'TESLA'}
     ]
-    ticker = {
-        'symbol': '^KS11',
-        'name': 'KOSPI'
-    }
 
     uploaded_urls = []
 
@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
         upload_result = cloudinary.uploader.upload(
             f"{ticker['name']}.png",
-            public_id = f"lppls/{ticker['name']}",
+            public_id = f"lppl/{ticker['name']}",
             overwrite=True,
             invalidate=True,
             resource_type="image"
