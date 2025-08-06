@@ -36,6 +36,13 @@ from engine.plot_confidence_indicators import plot_confidence_indicators
 
 if __name__ == "__main__":
     load_dotenv()
+    
+    # Cloudinary 업로드 현지 실행용
+    cloudinary.config(
+        cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
+        api_key = os.environ.get("CLOUDINARY_API_KEY"),
+        api_secret = os.environ.get("CLOUDINARY_API_SECRET")
+    )
 
     ticker_symbol = '^KS11'
     ticker = {
@@ -66,13 +73,6 @@ if __name__ == "__main__":
         plt.savefig(f"{ticker['name']}.png", bbox_inches='tight')
         #plt.show()
         
-        # Cloudinary 업로드 현지 실행용
-        cloudinary.config(
-            cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
-            api_key = os.environ.get("CLOUDINARY_API_KEY"),
-            api_secret = os.environ.get("CLOUDINARY_API_SECRET")
-        )
-
         upload_result = cloudinary.uploader.upload(
             f"{ticker['name']}.png",
             public_id = f"lppl/{ticker['name']}",
