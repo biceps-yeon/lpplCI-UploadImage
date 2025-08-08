@@ -60,7 +60,7 @@ if __name__ == "__main__":
         #{'symbol': '^KS11', 'name': 'KOSPI'},
         #{'symbol': '^GSPC', 'name': 'SNP500'},
         #{'symbol': 'TSLA', 'name': 'TESLA'},
-        {'symbol': '005930', 'name': 'SMSN'}
+        {'symbol': '005930.KS', 'name': 'SMSN'}
     ]
 
     uploaded_urls = []
