@@ -57,10 +57,14 @@ if __name__ == "__main__":
         'name': 'KOSPI'
     }
     tickers = [
-        #{'symbol': '^KS11', 'name': 'KOSPI'},
-        #{'symbol': '^GSPC', 'name': 'SNP500'},
-        #{'symbol': 'TSLA', 'name': 'TESLA'},
-        {'symbol': '005930.KS', 'name': 'SMSN'}
+        {'symbol': '^KS11', 'name': 'KOSPI'},
+        {'symbol': '^GSPC', 'name': 'SNP500'},
+        {'symbol': '^NDX', 'name': 'NSDQ100'},
+        {'symbol': 'TSLA', 'name': 'TESLA'},
+        {'symbol': 'PLTR', 'name': 'PLTR'},
+        {'symbol': '005930.KS', 'name': 'SMSN'},
+        {'symbol': '000660.KS', 'name': 'SKHnx'},
+        
     ]
 
     uploaded_urls = []
