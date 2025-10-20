@@ -57,11 +57,16 @@ if __name__ == "__main__":
         'name': 'KOSPI'
     }
     tickers = [
+        {'symbol': 'GC=F', 'name': 'COMESGoldFuture'},
         {'symbol': '^KS11', 'name': 'KOSPI'},
         {'symbol': '^GSPC', 'name': 'SNP500'},
         {'symbol': '^NDX', 'name': 'NSDQ100'},
         {'symbol': 'TSLA', 'name': 'TESLA'},
         {'symbol': 'PLTR', 'name': 'PLTR'},
+        {'symbol': 'NVDA', 'name': 'NVIDIA'},
+        {'symbol': 'AMD', 'name': 'AMD'},
+        {'symbol': 'ORCL', 'name': 'ORACLE'},
+        {'symbol': 'MSFT', 'name': 'MICROSOFT'},
         {'symbol': '005930.KS', 'name': 'SMSN'},
         {'symbol': '000660.KS', 'name': 'SKHnx'},
         
