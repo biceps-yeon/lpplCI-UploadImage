@@ -58,6 +58,8 @@ if __name__ == "__main__":
     }
     tickers = [
         {'symbol': 'GC=F', 'name': 'COMESGoldFuture'},
+        {'symbol': 'BTC-USD', 'name': 'Bitcoin/USD'},
+        {'symbol': 'ETH-USD', 'name': 'Ethereum/USD'},
         {'symbol': 'TLT', 'name': 'LongUSBond'},        
         {'symbol': '^KS11', 'name': 'KOSPI'},
         {'symbol': '^GSPC', 'name': 'SNP500'},
