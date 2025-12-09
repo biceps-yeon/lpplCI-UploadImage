@@ -74,6 +74,7 @@ if __name__ == "__main__":
         {'symbol': 'GOOGL', 'name': 'Alphabet A'},
         {'symbol': '005930.KS', 'name': 'SMSN'},
         {'symbol': '000660.KS', 'name': 'SKHnx'},
+        {'symbol': '005380.KS', 'name': 'Hyundai'}
         
     ]
 
