@@ -67,7 +67,7 @@ if __name__ == "__main__":
         # {'symbol': '^NDX', 'name': 'NSDQ100'},
         # {'symbol': 'SCHD', 'name': 'SCHD'},
         {'symbol': 'TSLA', 'name': 'TESLA'},
-        # {'symbol': 'PLTR', 'name': 'PLTR'},
+        {'symbol': 'PLTR', 'name': 'PLTR'},
         {'symbol': 'AMD', 'name': 'AMD'},
         # {'symbol': 'ORCL', 'name': 'ORACLE'},
         # {'symbol': 'MSFT', 'name': 'MICROSOFT'},
