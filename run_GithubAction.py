@@ -81,6 +81,8 @@ if __name__ == "__main__":
 
     uploaded_urls = []
 
+    today = date.today().strftime('%Y%m%d')
+    
     for ticker in tickers:
         print(f"--------------------------calculating {ticker['name']}--------------------------")
         # 데이터 로드
@@ -94,7 +96,7 @@ if __name__ == "__main__":
 
         # 시각화
         plot_confidence_indicators(res, res_df)
-        plt.suptitle(ticker['name'], fontsize=40, fontweight='bold')
+        plt.suptitle(f"{ticker['name']} ({today})", fontsize=40, fontweight='bold')
         plt.savefig(f"{ticker['name']}.png", bbox_inches='tight')
         #plt.show()
         
