@@ -61,7 +61,7 @@ if __name__ == "__main__":
         # {'symbol': 'BTC-USD', 'name': 'Bitcoin_USD'},
         {'symbol': 'ETH-USD', 'name': 'Ethereum_USD'},
         {'symbol': 'TLT', 'name': 'LongUSBond'},        
-        {'symbol': '^KS11', 'name': 'KOSPI'},
+        # {'symbol': '^KS11', 'name': 'KOSPI'},
         {'symbol': '^KQ11', 'name': 'KOSDAQ'},
         {'symbol': '^GSPC', 'name': 'SNP500'},
         # {'symbol': '^NDX', 'name': 'NSDQ100'},
