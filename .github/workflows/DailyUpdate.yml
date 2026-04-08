@@ -1,8 +1,11 @@
-name: Run LPPLCI Daily at 9AM KST
+name: Run LPPLCI Weekday at 9PM KST
 
 on:
   schedule:
-    - cron: '0 1 * * 1,3,5'  # UTC 기준 → KST 오전 9시
+  # 원하는 시간 KST 21
+  # KST = UTC + 9
+  # UTC 변환 ( KST 21 ) - 9 = 12
+    - cron: '0 12 * * 1,2,3,4,5'  # UTC 기준 → KST 오전 9시
   workflow_dispatch:      # 수동 실행도 가능하게 설정
 
 jobs:
