@@ -95,8 +95,31 @@ if __name__ == "__main__":
         res_df = lppls_model.compute_indicators(res)
 
         # 시각화
+        # plot_confidence_indicators(res, res_df)
+        # plt.suptitle(f"{ticker['name']} ({today})", fontsize=40, fontweight='bold')
+
+        # 교체
+        latest_pos = float(res_df["pos_conf"].iloc[-1])
+        latest_neg = float(res_df["neg_conf"].iloc[-1])
+        latest_date = pd.Timestamp.fromordinal(int(res_df["time"].iloc[-1])).strftime("%Y-%m-%d")
+        
         plot_confidence_indicators(res, res_df)
-        plt.suptitle(f"{ticker['name']} ({today})", fontsize=40, fontweight='bold')
+        
+        fig = plt.gcf()
+        fig.suptitle(
+            f"{ticker['name']} ({latest_date})",
+            fontsize=40,
+            fontweight='bold',
+            y=0.98
+        )
+        fig.text(
+            0.5, 0.94,
+            f"LPPL CI  pos={latest_pos:.3f}, neg={latest_neg:.3f}",
+            ha='center',
+            fontsize=25,
+            fontweight='bold'
+        )
+
         plt.savefig(f"{ticker['name']}.png", bbox_inches='tight')
         #plt.show()
         
