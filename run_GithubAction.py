@@ -106,14 +106,17 @@ if __name__ == "__main__":
         plot_confidence_indicators(res, res_df)
         
         fig = plt.gcf()
+        fig.subplots_adjust(top=0.83)
+        
         fig.suptitle(
             f"{ticker['name']} ({latest_date})",
             fontsize=40,
             fontweight='bold',
-            y=0.98
+            y=0.97
         )
+        
         fig.text(
-            0.5, 0.94,
+            0.5, 0.90,
             f"LPPL CI  pos={latest_pos:.3f}, neg={latest_neg:.3f}",
             ha='center',
             fontsize=25,
