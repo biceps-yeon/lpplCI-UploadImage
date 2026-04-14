@@ -86,7 +86,7 @@ if __name__ == "__main__":
     for ticker in tickers:
         print(f"--------------------------calculating {ticker['name']}--------------------------")
         # 데이터 로드
-        observations = load_data(ticker['symbol'])
+        observations, latest_market_date = load_data(ticker['symbol'])
 
         # LPPLS 계산
         lppls_model, res = compute_lpplci(observations, lppls)
@@ -95,13 +95,6 @@ if __name__ == "__main__":
         res_df = lppls_model.compute_indicators(res)
 
         # 시각화
-        # plot_confidence_indicators(res, res_df)
-        # plt.suptitle(f"{ticker['name']} ({today})", fontsize=40, fontweight='bold')
-
-        # 교체
-        latest_pos = float(res_df["pos_conf"].iloc[-1])
-        latest_neg = float(res_df["neg_conf"].iloc[-1])
-        latest_date = pd.Timestamp.fromordinal(int(res_df["time"].iloc[-1])).strftime("%Y-%m-%d")
         
         plot_confidence_indicators(res, res_df)
         
@@ -109,11 +102,14 @@ if __name__ == "__main__":
         fig.subplots_adjust(top=0.83)
         
         fig.suptitle(
-            f"{ticker['name']} ({latest_date})",
+            f"{ticker['name']} ({latest_market_date.strftime('%Y-%m-%d')})",
             fontsize=40,
             fontweight='bold',
             y=0.97
         )
+        
+        latest_pos = float(res_df["pos_conf"].iloc[-1])
+        latest_neg = float(res_df["neg_conf"].iloc[-1])
         
         fig.text(
             0.5, 0.90,
