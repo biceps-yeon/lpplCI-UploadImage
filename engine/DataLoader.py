@@ -9,7 +9,7 @@ def load_data(ticker_symbol):
 
     recent_data = yf.download(ticker_symbol, start=(today - timedelta(days=7)).isoformat(), end=(today + timedelta(days=1)).isoformat())
     if recent_data.empty:
-        raise ValueError("최근 7일 내에 코스피 거래 데이터가 없습니다.")
+        raise ValueError(f"{ticker_symbol}: 최근 거래 데이터가 없습니다.")
     end_date = recent_data.index[-1].date()
     
     try:
@@ -17,7 +17,7 @@ def load_data(ticker_symbol):
     except ValueError:
         start_date = end_date - timedelta(days=365 * year_length)
 
-    data = yf.download(ticker_symbol, start=start_date, end=end_date)
+    data = yf.download(ticker_symbol, start=start_date, end=(end_date + timedelta(days=1)).isoformat())
     data.reset_index(inplace=True)
     
     data = data[['Date', 'Close']]
