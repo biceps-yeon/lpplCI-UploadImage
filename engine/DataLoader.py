@@ -25,4 +25,4 @@ def load_data(ticker_symbol):
     price = np.log(data['Close']).values.reshape(-1)
 
     observations = np.array([time, price])
-    return observations 
+    return observations, end_date
