@@ -1,4 +1,4 @@
-name: Run LPPLCI Weekday at 0AM KST
+name: Run US LPPLCI Weekday at 12AM KST
 
 on:
   schedule:
