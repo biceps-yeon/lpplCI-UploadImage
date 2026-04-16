@@ -1,6 +1,6 @@
 MarketConfig={
   'KR': {
-    tickers = [
+    'tickers' : [
   
         {'symbol': '^KS11', 'name': 'KOSPI'},
         {'symbol': '^KQ11', 'name': 'KOSDAQ'},
@@ -13,7 +13,7 @@ MarketConfig={
     ]
   },
   'US': {
-    tickers = [
+    'tickers' : [
     
         {'symbol': 'GC=F', 'name': 'COMESGoldFuture'},
         {'symbol': 'TLT', 'name': 'LongUSBond'},
