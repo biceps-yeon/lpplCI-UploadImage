@@ -1,4 +1,4 @@
-name: Run LPPLCI Weekday at 0AM KST
+name: Run KR LPPLCI Weekday at 0AM KST
 
 on:
   schedule:
