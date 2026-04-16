@@ -23,13 +23,13 @@ from datetime import date, timedelta
 import pandas as pd
 
 import os
-
 from dotenv import load_dotenv
-import os
+import argparse
 import matplotlib.pyplot as plt
 import cloudinary
 import cloudinary.uploader
 
+from config import MarketConfig
 from engine.DataLoader import load_data
 from engine.ComputeLPPLCI import compute_lpplci
 from engine.plot_confidence_indicators import plot_confidence_indicators
@@ -51,6 +51,14 @@ if __name__ == "__main__":
         api_secret = os.environ["CLOUDINARY_API_SECRET"]
     )
 
+    # ticker 불러오기
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--market", choices=["KR", "US"], required=True)
+    args = parser.parse_args()
+    
+    tickers=MarketConfig[args.market]["tickers"]
+    
+    """
     ticker_symbol = '^KS11'
     ticker = {
         'symbol': '^KS11',
@@ -78,6 +86,7 @@ if __name__ == "__main__":
         {'symbol': '005380.KS', 'name': 'Hyundai'}
         
     ]
+    """
 
     uploaded_urls = []
 
