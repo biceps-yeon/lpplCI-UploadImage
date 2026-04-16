@@ -1,9 +1,9 @@
-name: Run LPPLCI Weekday at 9PM KST
+name: Run LPPLCI Weekday at 0AM KST
 
 on:
   schedule:
-    - cron: '0 12 * * 1-5'
-      timezone: 'Asia/Seoul'
+    # - cron: '0 12 * * 1-5'
+    #   timezone: 'Asia/Seoul'
     - cron: '0 0 * * 2-6'
       timezone: 'Asia/Seoul'
   workflow_dispatch:      # 수동 실행도 가능하게 설정
@@ -32,4 +32,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run LPPLCI script
-        run: python run_GithubAction.py
+        run: python run_GithubAction.py --market KR
