@@ -2,7 +2,7 @@ name: Run US LPPLCI Weekday at 12AM KST
 
 on:
   schedule:
-    - cron: '0 12 * * 1-5'
+    - cron: '0 12 * * 2-6'
       timezone: 'Asia/Seoul'
     # - cron: '0 0 * * 2-6'
     #   timezone: 'Asia/Seoul'
