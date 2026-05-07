@@ -32,4 +32,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run LPPLCI script
-        run: python run_GithubAction.py --market KR
+        run: python run_GithubAction.py --market US
