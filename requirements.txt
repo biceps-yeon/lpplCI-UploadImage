@@ -1,5 +1,5 @@
 lppls
-yfinance
+yfinance==0.2.46
 cloudinary
 matplotlib
 numpy
