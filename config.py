@@ -9,7 +9,6 @@ MarketConfig={
         {'symbol': '005380.KS', 'name': 'Hyundai'},
         {'symbol': 'BTC-USD', 'name': 'Bitcoin_USD'},
         {'symbol': 'ETH-USD', 'name': 'Ethereum_USD'},
-  
     ]
   },
   'US': {
@@ -27,7 +26,6 @@ MarketConfig={
         {'symbol': 'MSFT', 'name': 'MICROSOFT'},
         {'symbol': 'NVDA', 'name': 'NVIDIA'},
         {'symbol': 'GOOGL', 'name': 'Alphabet A'},
-    
     ]
   }
 }

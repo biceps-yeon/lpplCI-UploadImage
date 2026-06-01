@@ -35,16 +35,16 @@ from engine.plot_confidence_indicators import plot_confidence_indicators
 from engine.cloudinary_uploader import test_cloudinary_upload
 
 if __name__ == "__main__":
-    """load_dotenv()""" #현지에서 실행시 실행
+    load_dotenv() #현지에서 실행시 실행
 
-    """ # Cloudinary 업로드 현지 실행용
+    # Cloudinary 업로드 현지 실행용
     cloudinary.config(
         cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
         api_key = os.environ.get("CLOUDINARY_API_KEY"),
         api_secret = os.environ.get("CLOUDINARY_API_SECRET")
-    ) """
+    )
 
-    # Cloudinary 업로드 깃허브 액션 실행용
+    """# Cloudinary 업로드 깃허브 액션 실행용
     cloudinary.config(
         cloud_name = os.environ["CLOUDINARY_CLOUD_NAME"],
         api_key = os.environ["CLOUDINARY_API_KEY"],
@@ -57,7 +57,10 @@ if __name__ == "__main__":
     parser.add_argument("--market", choices=["KR", "US"], required=True)
     args = parser.parse_args()
     
-    tickers=MarketConfig[args.market]["tickers"]
+    tickers=MarketConfig[args.market]["tickers"]"""
+
+    market="KR"
+    tickers=MarketConfig[market]["tickers"]
 
     # test_cloudinary_upload(tickers)
     
