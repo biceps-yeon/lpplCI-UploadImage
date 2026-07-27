@@ -26,6 +26,7 @@ MarketConfig={
         {'symbol': 'MSFT', 'name': 'MICROSOFT'},
         {'symbol': 'NVDA', 'name': 'NVIDIA'},
         {'symbol': 'GOOGL', 'name': 'Alphabet A'},
+        {'symbol': 'SPCX', 'name': 'Space X'},
     ]
   }
 }
