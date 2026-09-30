@@ -64,3 +64,6 @@ git_push.bat
 
 #Cloudinary API
 .env
+
+#LPPL CI 계산 캐시
+lppl_cache/

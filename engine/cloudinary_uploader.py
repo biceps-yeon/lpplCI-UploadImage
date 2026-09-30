@@ -18,7 +18,10 @@ def configure_cloudinary():
     )
 
 
-def run_and_upload(tickers):
+CACHE_DIR = "lppl_cache"
+
+
+def run_and_upload(tickers, cache_dir=CACHE_DIR):
     uploaded_urls = []
 
     for ticker in tickers:
@@ -26,8 +29,9 @@ def run_and_upload(tickers):
         # 데이터 로드
         observations, latest_market_date = load_data(ticker['symbol'])
 
-        # LPPLS 계산
-        lppls_model, res = compute_lpplci(observations)
+        # LPPLS 계산 (캐시된 과거 윈도우는 재사용, 비어있는 최근 윈도우만 계산)
+        cache_path = os.path.join(cache_dir, f"{ticker['name']}.npz")
+        lppls_model, res = compute_lpplci(observations, cache_path)
 
         # confidence indicator 데이터프레임 생성
         res_df = lppls_model.compute_indicators(res)

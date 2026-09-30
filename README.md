@@ -11,6 +11,13 @@
 
 대상 티커 목록은 `config.py`의 `MarketConfig` 참고
 
+### LPPL CI 계산 캐시
+윈도우(끝 날짜 기준)별 nested fit 결과를 `lppl_cache/{name}.npz`에 저장하고, 다음 실행에서는 비어있는 최근 윈도우만 계산합니다.
+ - 계산 간격: 캐시 도입 이전 구간은 2거래일(`OUTER_INCREMENT`), 이후 구간은 매일 실행분이 누적되어 1거래일
+ - 깃허브 액션: `actions/cache`로 마켓별(`lppl-cache-KR-*`, `lppl-cache-US-*`) 보존. 캐시가 없으면(첫 실행, 7일 이상 미실행으로 삭제 등) 전체 계산
+ - 과거 가격이 바뀐 윈도우(액면분할 등)나 `engine/ComputeLPPLCI.py`의 하이퍼파라미터가 바뀐 경우 자동 재계산
+ - 강제 전체 재계산: 로컬은 `lppl_cache/` 삭제, 액션은 Actions > Caches에서 해당 캐시 삭제
+
 lppl ci 하이퍼파라미터 각 종목마다 fitting 필요
 
 티커의 종가 시계열을 불러오지 못하는 문제 발생: 260525
@@ -42,7 +49,7 @@ python run_local.py --market KR   # 또는 --market US (기본값 KR)
  - `run_local.py`: 로컬 엔트리포인트 (.env 로드)
  - `config.py`: 마켓별 티커 목록
  - `engine/DataLoader.py`: yfinance로 최근 10년 종가 로드
- - `engine/ComputeLPPLCI.py`: LPPLS nested fit 계산
+ - `engine/ComputeLPPLCI.py`: LPPLS nested fit 계산 (캐시 기반 증분 계산)
  - `engine/plot_confidence_indicators.py`: 가격 + pos/neg confidence indicator 차트
  - `engine/cloudinary_uploader.py`: 티커별 계산 → 이미지 저장 → Cloudinary 업로드 루프
 

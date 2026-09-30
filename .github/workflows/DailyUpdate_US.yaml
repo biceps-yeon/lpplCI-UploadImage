@@ -31,5 +31,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # 이전 실행의 LPPL CI 계산 결과 복원 (없으면 전체 계산)
+      - name: Restore LPPL CI cache
+        uses: actions/cache/restore@v4
+        with:
+          path: lppl_cache
+          key: lppl-cache-US-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            lppl-cache-US-
+
       - name: Run LPPLCI script
         run: python run_GithubAction.py --market US
+
+      # 실패해도 그때까지 계산된 종목의 결과는 저장
+      - name: Save LPPL CI cache
+        if: always() && hashFiles('lppl_cache/**') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: lppl_cache
+          key: lppl-cache-US-${{ github.run_id }}-${{ github.run_attempt }}
