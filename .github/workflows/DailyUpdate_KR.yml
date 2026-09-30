@@ -1,4 +1,4 @@
-name: Run KR LPPLCI Tue-Sat at 3AM KST
+name: Run KR LPPLCI Mon-Fri at 1AM KST
 
 on:
   schedule:

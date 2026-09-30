@@ -5,9 +5,9 @@
 ![LPPLS Confidnce Indicator of TESLA](https://res.cloudinary.com/dx1rb2dye/image/upload/lppls/TESLA.png)
 
 ## Update Status
-깃허브 액션 실행 시각 (KST, 화~토 = 전 거래일 장 마감 이후)
- - KR Market (`DailyUpdate_KR.yml`): 03시
- - US Market (`DailyUpdate_US.yaml`): 12시
+깃허브 액션 실행 시각 (KST)
+ - KR Market (`DailyUpdate_KR.yml`): 월~금 01시
+ - US Market (`DailyUpdate_US.yaml`): 화~토 12시 (전 거래일 미국장 마감 이후)
 
 대상 티커 목록은 `config.py`의 `MarketConfig` 참고
 
