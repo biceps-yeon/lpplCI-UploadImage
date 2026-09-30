@@ -1,4 +1,4 @@
-name: Run KR LPPLCI Weekday at 0AM KST
+name: Run KR LPPLCI Tue-Sat at 3AM KST
 
 on:
   schedule:
@@ -31,9 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Check yfinance version
-        run: |
-          python -c "import yfinance as yf; print('yfinance version:', yf.__version__)"
+      # - name: Check yfinance version
+      #   run: |
+      #     python -c "import yfinance as yf; print('yfinance version:', yf.__version__)"
 
       - name: Run LPPLCI script
         run: python run_GithubAction.py --market KR

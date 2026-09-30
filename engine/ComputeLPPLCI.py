@@ -1,7 +1,8 @@
 from lppls import lppls
 
-def compute_lpplci(observations, lppls):
-    MAX_SEARCHES = 25
+MAX_SEARCHES = 25
+
+def compute_lpplci(observations):
     lppls_model = lppls.LPPLS(observations=observations)
     res = lppls_model.mp_compute_nested_fits(
         workers=8,
@@ -9,6 +10,6 @@ def compute_lpplci(observations, lppls):
         smallest_window_size=30,
         outer_increment=2,
         inner_increment=1,
-        max_searches=25,
+        max_searches=MAX_SEARCHES,
     )
-    return lppls_model, res 
+    return lppls_model, res
