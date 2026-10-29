@@ -10,7 +10,7 @@ on:
 
 jobs:
   run-lpplci:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # ubuntu-latest(26.04)에는 Python 3.14.0 빌드가 없음
 
     env:
       CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
